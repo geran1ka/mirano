@@ -1,0 +1,89 @@
+@use "../variables" as *;
+
+.footer {
+  padding: 80px 0;
+  border-radius: 32px 32px 0 0;
+  background-color: $footer;
+  background-image: url("/img/pattern.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 300px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contacts-email,
+  &__developers-link {
+    outline-offset: 4px;
+    outline-color: transparent;
+    color: $dark;
+
+    transition:
+      color $transition,
+      outline-color $transition;
+
+    &:focus-visible {
+      outline-color: $light-orange;
+    }
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__contacts-list {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  &__contacts-item {
+  }
+
+  &__contacts-link {
+    outline-offset: 4px;
+
+    color: $orange;
+    outline-color: transparent;
+
+    transition:
+      color $transition,
+      outline-color $transition;
+
+    &:focus-visible {
+      outline-color: $orange;
+    }
+
+    &:hover {
+      color: $light-orange;
+    }
+  }
+
+  &__developers {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__developers-text {
+  }
+
+  &__developers-link {
+  }
+
+  &__copyright {
+  }
+}

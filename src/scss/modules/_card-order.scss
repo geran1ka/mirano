@@ -1,0 +1,58 @@
+@use "../variables" as *;
+
+.card-order {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 12px;
+
+  &__img {
+    max-width: 54px;
+    max-height: 54px;
+    border-radius: 12px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__subtitle {
+    grid-column: span 2;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  &__count-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-items: center;
+    max-width: max-content;
+  }
+
+  &__btn {
+    display: block;
+    width: 29px;
+    height: 29px;
+    border-radius: 6px;
+    background-color: $bg;
+    text-align: center;
+
+    & svg {
+      margin: 0 auto;
+    }
+  }
+
+  &__count {
+    font-size: 14px;
+  }
+
+  &__price {
+    justify-self: end;
+    max-width: max-content;
+  }
+}

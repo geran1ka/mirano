@@ -1,0 +1,72 @@
+@use "../variables" as *;
+.cart {
+  position: relative;
+  border-radius: 32px;
+  padding: 24px 16px;
+  background-color: $white;
+  max-width: 310px;
+  max-height: 778px;
+  overflow-y: auto;
+  display: flex;
+  margin-top: 130px;
+  grid-area: cart;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex-grow: 1;
+    flex-basis: 100%;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  &__delivery {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url("/img/delivery.svg");
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+  }
+
+  &__item {
+  }
+
+  &__btn {
+    border-radius: 32px;
+    padding: 9px 16px 8px 16px;
+    color: $white;
+    background-color: $light-orange;
+  }
+
+  &__totap-price {
+  }
+
+  &__close {
+    position: absolute;
+    top: 28px;
+    right: 16px;
+  }
+
+  &__order-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

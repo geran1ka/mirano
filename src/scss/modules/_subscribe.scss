@@ -1,0 +1,22 @@
+@use "../variables" as *;
+.subscribe {
+  padding: 70px 0 140px;
+  grid-area: subscribe;
+
+  &__title {
+    margin-bottom: 40px;
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    color: $green;
+  }
+
+  &__form {
+    max-width: 524px;
+    max-height: 40px;
+    margin: 0 auto;
+  }
+}
