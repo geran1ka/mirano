@@ -57,6 +57,7 @@
             </svg>
           </button>
         </form>
+
         <img
           src="img/logo.svg"
           alt="Логотип Mirano Flower Buetique"
@@ -116,52 +117,91 @@
       </section>
       <section class="filter">
         <div class="container filter__container">
-          <form class="filter__form">
-            <fieldset class="filter__menu">
-              <input
-                class="filter__input"
-                type="radio"
-                name="filter"
-                id="flowers"
-              />
-              <label class="filter__label filter__label--flowers" for="flowers"
-                ><span>Цветы</span></label
-              >
+          <h2 class="visually-hidden"></h2>
+          <!-- <form class="filter__form"> -->
+          <fieldset class="filter__group">
+            <input
+              class="filter__radio"
+              type="radio"
+              name="type"
+              value="flowers"
+              id="flowers"
+              checked
+            />
+            <label class="filter__label filter__label--flowers" for="flowers"
+              ><span>Цветы</span></label
+            >
 
-              <input
-                class="filter__input"
-                type="radio"
-                name="filter"
-                id="toys"
-              />
-              <label class="filter__label filter__label--toys" for="toys"
-                ><span>Игрушки</span></label
-              >
+            <input
+              class="filter__radio"
+              type="radio"
+              name="type"
+              id="toys"
+              value="toys"
+            />
+            <label class="filter__label filter__label--toys" for="toys"
+              ><span>Игрушки</span></label
+            >
 
-              <input
-                class="filter__input"
-                type="radio"
-                name="filter"
-                id="postcards"
-              />
-              <label
-                class="filter__label filter__label--postcard"
-                for="postcards"
-                ><span>Открытки</span></label
-              >
-            </fieldset>
-            <fieldset class="filter__filter">
-              <select class="filter__select-type" name="type" id="">
-                Тип товара
-                <option>Тип товара</option>
-                <option value="">Монобукеты</option>
-                <option value="">Авторские букеты</option>
-                <option value="">Цветы в коробке</option>
-                <option value="">Цветы в корзине</option>
-                <option value="">Букеты из сухоцветов</option>
-              </select>
-            </fieldset>
-          </form>
+            <input
+              class="filter__radio"
+              type="radio"
+              name="type"
+              value="postcards"
+              id="postcards"
+            />
+            <label class="filter__label filter__label--postcard" for="postcards"
+              ><span>Открытки</span></label
+            >
+          </fieldset>
+          <fieldset class="filter__group filter__group--choices">
+            <div class="filter__choices choices">
+              <button class="filter__select choices__btn">Цена</button>
+              <div class="choices__box">
+                <fieldset class="filter__group">
+                  <input
+                    class="filter__input-price"
+                    type="text"
+                    placeholder="от"
+                  />
+                  <input
+                    class="filter__input-price"
+                    type="text"
+                    placeholder="до"
+                  />
+                </fieldset>
+              </div>
+            </div>
+
+            <div class="filter__choices choices">
+              <button class="filter__select choices__btn">Тип товара</button>
+              <div class="choices__box">
+                <ul class="filter__type-list">
+                  <li class="filter__type-item">
+                    <button class="filter__type-btn">Монобукеты</button>
+                  </li>
+
+                  <li class="filter__type-item">
+                    <button class="filter__type-btn">Авторские букеты</button>
+                  </li>
+
+                  <li class="filter__type-item">
+                    <button class="filter__type-btn">Цветы в коробке</button>
+                  </li>
+
+                  <li class="filter__type-item">
+                    <button class="filter__type-btn">Цветы в корзине</button>
+                  </li>
+                  <li class="filter__type-item">
+                    <button class="filter__type-btn">
+                      Букеты из сухоцветов
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+          <!-- </form> -->
         </div>
       </section>
       <div class="section-wrapper">
@@ -170,7 +210,7 @@
             <h2 class="goods__title">Цветы</h2>
             <ul class="goods__list">
               <li class="goods__item">
-                <article class="card">
+                <article class="goods__card card">
                   <img class="card__img" src="/img/bouquet-1.jpg" alt="" />
 
                   <div class="card__info">
@@ -184,7 +224,8 @@
                         class="card__btn-cart btn"
                         aria-label="Добавить букет в корзину"
                       >
-                        <span>3000</span> ₽
+                        <span class="card__price">3000 ₽</span>
+                        <span class="card__btn-text">В корзину</span>
                       </button>
                     </div>
                   </div>
@@ -192,7 +233,7 @@
               </li>
 
               <li class="goods__item">
-                <article class="card">
+                <article class="goods__card card">
                   <img
                     class="card__img"
                     src="/img/bouquet-2.jpg"
@@ -218,7 +259,7 @@
               </li>
 
               <li class="goods__item">
-                <article class="card">
+                <article class="goods__card card">
                   <img
                     class="card__img"
                     src="/img/bouquet-3.jpg"
@@ -244,7 +285,7 @@
               </li>
 
               <li class="goods__item">
-                <article class="card">
+                <article class="goods__card card">
                   <img
                     class="card__img"
                     src="/img/bouquet-4.jpg"
@@ -268,7 +309,7 @@
               </li>
 
               <li class="goods__item">
-                <article class="card">
+                <article class="goods__card card">
                   <img
                     class="card__img"
                     src="/img/bouquet-5.jpg"
@@ -294,7 +335,7 @@
               </li>
 
               <li class="goods__item">
-                <article class="card">
+                <article class="goods__card card">
                   <img
                     class="card__img"
                     src="/img/bouquet-1.jpg"
@@ -543,13 +584,13 @@
           class="footer__logo logo"
         />
 
-        <adress class="footer__contacts">
-          <a class="footer__contacts-email" href="mailto:Petplanet@gmail.com"
+        <adress class="footer__adress">
+          <a class="footer__adress-email" href="mailto:Petplanet@gmail.com"
             >Petplanet@gmail.com</a
           >
-          <ul class="footer__contacts-list">
-            <li class="footer__contacts-item">
-              <a href="#" class="footer__contacts-link">
+          <ul class="footer__social-list">
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link">
                 <svg
                   width="29"
                   height="28"
@@ -563,8 +604,8 @@
                 </svg>
               </a>
             </li>
-            <li class="footer__contacts-item">
-              <a href="#" class="footer__contacts-link">
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link">
                 <svg
                   width="29"
                   height="28"
@@ -578,8 +619,8 @@
                 </svg>
               </a>
             </li>
-            <li class="footer__contacts-item">
-              <a href="#" class="footer__contacts-link">
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link">
                 <svg
                   width="29"
                   height="28"
@@ -598,14 +639,17 @@
 
         <div class="footer__developers">
           <p class="footer__developers-text">Проект сделан в учебных целях</p>
-          <p class="footer__developers-text">
-            Designer:
-            <a href="#" class="footer__developers-link">Anastasia Ilina</a>
-          </p>
-          <p class="footer__developers-text">
-            Developer:
-            <a href="#" class="footer__developers-link">Roman Khoruzhy</a>
-          </p>
+
+          <ul class="footer__developers-list">
+            <li class="footer__developers-item">
+              Designer:
+              <a href="" class="footer__developers-link">Anastasia Ilina</a>
+            </li>
+            <li class="footer__developers-item">
+              Developer:
+              <a href="" class="footer__developers-link">Roman Khoruzhy</a>
+            </li>
+          </ul>
         </div>
 
         <p class="footer__copyright">©MIRANO, 2024</p>

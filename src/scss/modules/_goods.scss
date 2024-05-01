@@ -19,11 +19,9 @@
   }
 
   &__list {
-    margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 310px);
     gap: 24px 20px;
-    max-width: 970px;
-    flex-wrap: wrap;
     justify-content: center;
   }
 

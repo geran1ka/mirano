@@ -16,17 +16,19 @@
   }
 
   &__logo {
-    max-width: 300px;
+    max-width: 200px;
   }
 
-  &__contacts {
+  &__adress {
+    font-style: normal;
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  &__contacts-email,
+  &__adress-email,
   &__developers-link {
+    display: inline-block;
     outline-offset: 4px;
     outline-color: transparent;
     color: $dark;
@@ -44,16 +46,17 @@
     }
   }
 
-  &__contacts-list {
+  &__social-list {
     display: flex;
     gap: 12px;
     justify-content: center;
+    align-items: center;
   }
 
-  &__contacts-item {
+  &__social-item {
   }
 
-  &__contacts-link {
+  &__social-link {
     outline-offset: 4px;
 
     color: $orange;
@@ -78,7 +81,13 @@
     gap: 3px;
   }
 
-  &__developers-text {
+  &__developers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__developers-item {
   }
 
   &__developers-link {

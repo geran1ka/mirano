@@ -3,37 +3,44 @@
 .filter {
   padding: 30px 0;
 
-  &__form {
+  &__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 30px;
   }
 
-  &__menu {
+  &__group {
     position: relative;
+    padding: 0;
+    margin: 0;
     display: flex;
     gap: 12px;
     border: none;
+
+    &--choices {
+      gap: 64px;
+    }
   }
 
-  &__input {
+  &__radio {
     position: absolute;
     appearance: none;
   }
 
-  &__input:checked + &__label {
+  // &__radio:checked + &__label:hover {
+  //   color: $white;
+  //   background-color: $orange;
+  // }
+
+  &__radio:focus-visible + &__label {
+    outline: 2px solid $orange;
+    outline-offset: 5px;
+  }
+
+  &__radio:checked + &__label {
     color: $white;
     background-color: $light-orange;
-  }
-
-  &__input:checked + &__label:hover {
-    color: $white;
-    background-color: $orange;
-  }
-
-  &__input:focus-visible + &__label {
-    border-color: $light-orange;
-    color: $white;
-    background-color: $orange;
   }
 
   &__label {
@@ -57,21 +64,22 @@
       display: block;
       width: 40px;
       height: 40px;
+      background-size: 40px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
     }
 
     &--flowers::before {
-      background-image: url("/img/flowers.svg");
+      background-image: url("/img/flowers.png");
     }
 
     &--toys::before {
-      background-image: url("/img/toys.svg");
+      background-image: url("/img/toys.png");
     }
 
     &--postcard::before {
-      background-image: url("/img/postcard.svg");
+      background-image: url("/img/postcard.png");
     }
 
     &:hover {
@@ -80,17 +88,41 @@
     }
   }
 
-  &__filter {
-    border: none;
-    background-color: transparent;
-    display: flex;
-    gap: 64px;
-    align-items: center;
+  &__menu--choices {
   }
 
-  &__select-type {
-    border: none;
-    outline: none;
-    background-color: transparent;
+  &__choices {
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-image: url(/img/arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 8px;
+      background-position: center;
+      scale: -1;
+    }
+  }
+
+  &__group {
+  }
+
+  &__input-price {
+  }
+
+  &__type-list {
+  }
+
+  &__type-item {
+  }
+
+  &__type-btn {
   }
 }

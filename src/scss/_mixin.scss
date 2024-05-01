@@ -1,0 +1,13 @@
+@mixin font-size($minFonts, $maxFonts, $minViewport, $maxViewport) {
+  font-size: clamp(
+    calc($minFonts * 1px),
+    calc(
+      $minFonts * 1px +
+        (
+          ($maxFonts - $minFonts) *
+            ((100vw - $minViewport * 1px) / ($maxViewport - $minViewport))
+        )
+    ),
+    calc($maxFonts * 1px)
+  );
+}

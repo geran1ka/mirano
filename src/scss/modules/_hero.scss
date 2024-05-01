@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixin" as *;
 
 .hero {
   padding: 60px 0 30px;
@@ -12,11 +13,7 @@
   &__title {
     font-family: $second-family;
     font-weight: 400;
-    font-size: clamp(
-      80px,
-      calc(80px + (40 * ((100vw - 1024px) / (1440 - 1024)))),
-      120px
-    );
+    @include font-size(80, 120, 1024, 1440);
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
@@ -27,11 +24,7 @@
     font-family: $second-family;
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(
-      32px,
-      calc(32px + (8 * ((100vw - 1024px) / (1440 - 1024)))),
-      40px
-    );
+    @include font-size(32, 40, 1024, 1440);
 
     line-height: 1.3;
     text-align: right;

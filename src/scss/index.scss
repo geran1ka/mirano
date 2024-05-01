@@ -1,9 +1,11 @@
 @use "./base" as *;
 @use "./fonts" as *;
+@use "./mixin" as *;
 @use "./form";
 @use "./modules/header";
 @use "./modules/hero";
 @use "./modules/filter";
+@use "./modules/choices";
 @use "./modules/goods";
 @use "./modules/card";
 @use "./modules/subscribe";

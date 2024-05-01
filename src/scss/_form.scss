@@ -46,12 +46,14 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+    fill: #fff;
+
     background-color: $light-orange;
     border-radius: 32px;
     outline: none;
 
     &--rotate svg {
-      transform: rotate(-90deg);
+      rotate: -90deg;
     }
   }
 }
