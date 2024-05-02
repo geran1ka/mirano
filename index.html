@@ -157,8 +157,8 @@
           <fieldset class="filter__group filter__group--choices">
             <div class="filter__choices choices">
               <button class="filter__select choices__btn">Цена</button>
-              <div class="choices__box">
-                <fieldset class="filter__group">
+              <div class="choices__box filter__choices-box">
+                <fieldset class="filter__price">
                   <input
                     class="filter__input-price"
                     type="text"
@@ -175,7 +175,9 @@
 
             <div class="filter__choices choices">
               <button class="filter__select choices__btn">Тип товара</button>
-              <div class="choices__box">
+              <div
+                class="choices__box filter__choices-box filter__choices-box--alt-padding"
+              >
                 <ul class="filter__type-list">
                   <li class="filter__type-item">
                     <button class="filter__type-btn">Монобукеты</button>
@@ -204,377 +206,379 @@
           <!-- </form> -->
         </div>
       </section>
-      <div class="section-wrapper">
-        <setion class="goods">
-          <div class="container goods__container">
-            <h2 class="goods__title">Цветы</h2>
-            <ul class="goods__list">
-              <li class="goods__item">
-                <article class="goods__card card">
-                  <img class="card__img" src="/img/bouquet-1.jpg" alt="" />
+      <!-- <div class="section-wrapper"> -->
 
-                  <div class="card__info">
-                    <h3 class="card__title">
-                      Авторский букет из роз, диантусов и сухоцветов
-                    </h3>
+      <section class="goods">
+        <div class="container goods__container">
+          <h2 class="goods__title">Цветы</h2>
+          <ul class="goods__list">
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img class="card__img" src="/img/bouquet-1.jpg" alt="" />
 
-                    <div class="card__order">
-                      <p class="card__delivery">сегодня в 14:00</p>
-                      <button
-                        class="card__btn-cart btn"
-                        aria-label="Добавить букет в корзину"
-                      >
-                        <span class="card__price">3000 ₽</span>
-                        <span class="card__btn-text">В корзину</span>
-                      </button>
-                    </div>
+                <div class="card__info">
+                  <h3 class="card__title">
+                    Авторский букет из роз, диантусов и сухоцветов
+                  </h3>
+
+                  <div class="card__order">
+                    <p class="card__delivery">сегодня в 14:00</p>
+                    <button
+                      class="card__btn-cart btn"
+                      aria-label="Добавить букет в корзину"
+                    >
+                      <span class="card__price">3000 ₽</span>
+                      <span class="card__btn-text">В корзину</span>
+                    </button>
                   </div>
-                </article>
-              </li>
+                </div>
+              </article>
+            </li>
 
-              <li class="goods__item">
-                <article class="goods__card card">
-                  <img
-                    class="card__img"
-                    src="/img/bouquet-2.jpg"
-                    alt="Авторский букет из роз, герберов, диантусов и сухоцветов"
-                  />
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img
+                  class="card__img"
+                  src="/img/bouquet-2.jpg"
+                  alt="Авторский букет из роз, герберов, диантусов и сухоцветов"
+                />
 
-                  <div class="card__info">
-                    <h3 class="card__title">
-                      Авторский букет из роз, герберов, диантусов и сухоцветов
-                    </h3>
+                <div class="card__info">
+                  <h3 class="card__title">
+                    Авторский букет из роз, герберов, диантусов и сухоцветов
+                  </h3>
 
-                    <div class="card__order">
-                      <p class="card__delivery">сегодня в 14:00</p>
-                      <button
-                        class="card__btn-cart btn"
-                        aria-label="Добавить букет в корзину"
-                      >
-                        <span>2000</span> ₽
-                      </button>
-                    </div>
+                  <div class="card__order">
+                    <p class="card__delivery">сегодня в 14:00</p>
+                    <button
+                      class="card__btn-cart btn"
+                      aria-label="Добавить букет в корзину"
+                    >
+                      <span>2000</span> ₽
+                    </button>
                   </div>
-                </article>
-              </li>
+                </div>
+              </article>
+            </li>
 
-              <li class="goods__item">
-                <article class="goods__card card">
-                  <img
-                    class="card__img"
-                    src="/img/bouquet-3.jpg"
-                    alt="Авторский букет из роз и сухоцветов"
-                  />
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img
+                  class="card__img"
+                  src="/img/bouquet-3.jpg"
+                  alt="Авторский букет из роз и сухоцветов"
+                />
 
-                  <div class="card__info">
-                    <h3 class="card__title">
-                      Авторский букет из роз и сухоцветов
-                    </h3>
+                <div class="card__info">
+                  <h3 class="card__title">
+                    Авторский букет из роз и сухоцветов
+                  </h3>
 
-                    <div class="card__order">
-                      <p class="card__delivery">сегодня в 14:00</p>
-                      <button
-                        class="card__btn-cart btn"
-                        aria-label="Добавить букет в корзину"
-                      >
-                        <span>2200</span> ₽
-                      </button>
-                    </div>
+                  <div class="card__order">
+                    <p class="card__delivery">сегодня в 14:00</p>
+                    <button
+                      class="card__btn-cart btn"
+                      aria-label="Добавить букет в корзину"
+                    >
+                      <span>2200</span> ₽
+                    </button>
                   </div>
-                </article>
-              </li>
+                </div>
+              </article>
+            </li>
 
-              <li class="goods__item">
-                <article class="goods__card card">
-                  <img
-                    class="card__img"
-                    src="/img/bouquet-4.jpg"
-                    alt="Монобукет из тюльпан"
-                  />
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img
+                  class="card__img"
+                  src="/img/bouquet-4.jpg"
+                  alt="Монобукет из тюльпан"
+                />
 
-                  <div class="card__info">
-                    <h3 class="card__title">Монобукет из тюльпан</h3>
+                <div class="card__info">
+                  <h3 class="card__title">Монобукет из тюльпан</h3>
 
-                    <div class="card__order">
-                      <p class="card__delivery">сегодня в 14:00</p>
-                      <button
-                        class="card__btn-cart btn"
-                        aria-label="Добавить букет в корзину"
-                      >
-                        <span>1600</span> ₽
-                      </button>
-                    </div>
+                  <div class="card__order">
+                    <p class="card__delivery">сегодня в 14:00</p>
+                    <button
+                      class="card__btn-cart btn"
+                      aria-label="Добавить букет в корзину"
+                    >
+                      <span>1600</span> ₽
+                    </button>
                   </div>
-                </article>
-              </li>
+                </div>
+              </article>
+            </li>
 
-              <li class="goods__item">
-                <article class="goods__card card">
-                  <img
-                    class="card__img"
-                    src="/img/bouquet-5.jpg"
-                    alt="Авторский букет из роз и диантусов"
-                  />
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img
+                  class="card__img"
+                  src="/img/bouquet-5.jpg"
+                  alt="Авторский букет из роз и диантусов"
+                />
 
-                  <div class="card__info">
-                    <h3 class="card__title">
-                      Авторский букет из роз и диантусов
-                    </h3>
+                <div class="card__info">
+                  <h3 class="card__title">
+                    Авторский букет из роз и диантусов
+                  </h3>
 
-                    <div class="card__order">
-                      <p class="card__delivery">сегодня в 14:00</p>
-                      <button
-                        class="card__btn-cart btn"
-                        aria-label="Добавить букет в корзину"
-                      >
-                        <span>2700</span> ₽
-                      </button>
-                    </div>
+                  <div class="card__order">
+                    <p class="card__delivery">сегодня в 14:00</p>
+                    <button
+                      class="card__btn-cart btn"
+                      aria-label="Добавить букет в корзину"
+                    >
+                      <span>2700</span> ₽
+                    </button>
                   </div>
-                </article>
-              </li>
+                </div>
+              </article>
+            </li>
 
-              <li class="goods__item">
-                <article class="goods__card card">
-                  <img
-                    class="card__img"
-                    src="/img/bouquet-1.jpg"
-                    alt="Монобукет из сухоцветов"
-                  />
+            <li class="goods__item">
+              <article class="goods__card card">
+                <img
+                  class="card__img"
+                  src="/img/bouquet-1.jpg"
+                  alt="Монобукет из сухоцветов"
+                />
 
-                  <div class="card__info">
-                    <h3 class="card__title">Монобукет из сухоцветов</h3>
+                <div class="card__info">
+                  <h3 class="card__title">Монобукет из сухоцветов</h3>
 
-                    <div class="card__order">
-                      <p class="card__delivery">сегодня в 14:00</p>
-                      <button
-                        class="card__btn-cart btn"
-                        aria-label="Добавить букет в корзину"
-                      >
-                        <span>1500</span> ₽
-                      </button>
-                    </div>
+                  <div class="card__order">
+                    <p class="card__delivery">сегодня в 14:00</p>
+                    <button
+                      class="card__btn-cart btn"
+                      aria-label="Добавить букет в корзину"
+                    >
+                      <span>1500</span> ₽
+                    </button>
                   </div>
-                </article>
-              </li>
-            </ul>
-          </div>
-        </setion>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <section class="subscribe">
-          <div class="container subscribe__container">
-            <h2 class="subscribe__title">ПОдпишись на рассылку</h2>
+      <section class="subscribe">
+        <div class="container subscribe__container">
+          <h2 class="subscribe__title">ПОдпишись&nbsp;на рассылку</h2>
 
-            <form class="subscribe__form form">
-              <input
-                class="form__input"
-                type="email"
-                name="email"
-                placeholder="E-mail"
-              />
+          <form class="subscribe__form form">
+            <input
+              class="form__input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+            />
 
-              <button
-                class="form__btn form__btn--rotate"
-                type="submit"
-                aria-label="Подписаться на рассылку"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.3333 4.16663C13.3333 4.78496 13.9442 5.70829 14.5625 6.48329C15.3575 7.48329 16.3075 8.35579 17.3967 9.02163C18.2133 9.52079 19.2033 9.99996 20 9.99996M20 9.99996C19.2033 9.99996 18.2125 10.4791 17.3967 10.9783C16.3075 11.645 15.3575 12.5175 14.5625 13.5158C13.9442 14.2916 13.3333 15.2166 13.3333 15.8333M20 9.99996H4.76837e-07"
-                    stroke="currentColor"
-                  />
-                </svg>
-              </button>
-            </form>
-          </div>
-        </section>
-        <aside class="cart">
-          <div class="cart__container">
-            <div class="cart__order-top">
-              <h2 class="cart__title">Ваш заказ</h2>
-              <p class="cart__delivery">сегодня в 14:00</p>
-            </div>
-            <ul class="cart__list">
-              <li class="cart__item">
-                <article class="card-order">
-                  <img
-                    src="/img/order-img-1.jpg"
-                    alt=""
-                    class="card-order__img"
-                  />
-                  <div class="card-order__content">
-                    <h3 class="card-order__subtitle">
-                      Авторский букет из роз, диантусов и сухоцветов
-                    </h3>
-                    <div class="card-order__count-wrapper">
-                      <button class="card-order__btn card-order__btn--minus">
-                        <svg
-                          width="5"
-                          height="2"
-                          viewBox="0 0 5 2"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4.44886 0.0880681V1.18182H-0.00568183V0.0880681H4.44886Z"
-                            fill="#2E3514"
-                          />
-                        </svg>
-                      </button>
-                      <p class="card-order__count">1</p>
-                      <button class="card-order__btn card-order__btn--minus">
-                        <svg
-                          width="7"
-                          height="8"
-                          viewBox="0 0 7 8"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.05682 7.30398V0.741477H4.17045V7.30398H3.05682ZM0.332386 4.57955V3.46591H6.89489V4.57955H0.332386Z"
-                            fill="#2E3514"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <p class="card-order__price"><span>3000</span> ₽</p>
-                  </div>
-                </article>
-              </li>
-
-              <li class="cart__item">
-                <article class="card-order">
-                  <img
-                    src="/img/order-img-1.jpg"
-                    alt=""
-                    class="card-order__img"
-                  />
-                  <div class="card-order__content">
-                    <h3 class="card-order__subtitle">
-                      Авторский букет из роз, диантусов и сухоцветов
-                    </h3>
-                    <div class="card-order__count-wrapper">
-                      <button class="card-order__btn card-order__btn--minus">
-                        <svg
-                          width="5"
-                          height="2"
-                          viewBox="0 0 5 2"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4.44886 0.0880681V1.18182H-0.00568183V0.0880681H4.44886Z"
-                            fill="#2E3514"
-                          />
-                        </svg>
-                      </button>
-                      <p class="card-order__count">1</p>
-                      <button class="card-order__btn card-order__btn--minus">
-                        <svg
-                          width="7"
-                          height="8"
-                          viewBox="0 0 7 8"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.05682 7.30398V0.741477H4.17045V7.30398H3.05682ZM0.332386 4.57955V3.46591H6.89489V4.57955H0.332386Z"
-                            fill="#2E3514"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <p class="card-order__price"><span>3000</span> ₽</p>
-                  </div>
-                </article>
-              </li>
-
-              <li class="cart__item">
-                <article class="card-order">
-                  <img
-                    src="/img/order-img-1.jpg"
-                    alt=""
-                    class="card-order__img"
-                  />
-                  <div class="card-order__content">
-                    <h3 class="card-order__subtitle">
-                      Авторский букет из роз, диантусов и сухоцветов
-                    </h3>
-                    <div class="card-order__count-wrapper">
-                      <button class="card-order__btn card-order__btn--minus">
-                        <svg
-                          width="5"
-                          height="2"
-                          viewBox="0 0 5 2"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4.44886 0.0880681V1.18182H-0.00568183V0.0880681H4.44886Z"
-                            fill="#2E3514"
-                          />
-                        </svg>
-                      </button>
-                      <p class="card-order__count">1</p>
-                      <button class="card-order__btn card-order__btn--minus">
-                        <svg
-                          width="7"
-                          height="8"
-                          viewBox="0 0 7 8"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.05682 7.30398V0.741477H4.17045V7.30398H3.05682ZM0.332386 4.57955V3.46591H6.89489V4.57955H0.332386Z"
-                            fill="#2E3514"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <p class="card-order__price"><span>3000</span> ₽</p>
-                  </div>
-                </article>
-              </li>
-            </ul>
-            <div class="cart__order-bottom">
-              <button class="cart__btn">Оформить</button>
-              <p class="cart__totap-price"><span>9000</span> ₽</p>
-            </div>
-
-            <button class="cart__close">
+            <button
+              class="form__btn form__btn--rotate"
+              type="submit"
+              aria-label="Подписаться на рассылку"
+            >
               <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect
-                  x="5"
-                  y="5.70715"
-                  width="1"
-                  height="25"
-                  transform="rotate(-45 5 5.70715)"
-                  fill="#D17D2F"
-                />
-                <rect
-                  x="22.6777"
-                  y="5"
-                  width="1"
-                  height="25"
-                  transform="rotate(45 22.6777 5)"
-                  fill="#D17D2F"
+                <path
+                  d="M13.3333 4.16663C13.3333 4.78496 13.9442 5.70829 14.5625 6.48329C15.3575 7.48329 16.3075 8.35579 17.3967 9.02163C18.2133 9.52079 19.2033 9.99996 20 9.99996M20 9.99996C19.2033 9.99996 18.2125 10.4791 17.3967 10.9783C16.3075 11.645 15.3575 12.5175 14.5625 13.5158C13.9442 14.2916 13.3333 15.2166 13.3333 15.8333M20 9.99996H4.76837e-07"
+                  stroke="currentColor"
                 />
               </svg>
             </button>
+          </form>
+        </div>
+      </section>
+      <aside class="cart">
+        <div class="cart__container">
+          <div class="cart__order-top">
+            <h2 class="cart__title">Ваш заказ</h2>
+            <p class="cart__delivery">сегодня в 14:00</p>
           </div>
-        </aside>
-      </div>
+          <ul class="cart__list">
+            <li class="cart__item">
+              <article class="card-order">
+                <img
+                  src="/img/order-img-1.jpg"
+                  alt=""
+                  class="card-order__img"
+                />
+                <div class="card-order__content">
+                  <h3 class="card-order__subtitle">
+                    Авторский букет из роз, диантусов и сухоцветов
+                  </h3>
+                  <div class="card-order__count-wrapper">
+                    <button class="card-order__btn card-order__btn--minus">
+                      <svg
+                        width="5"
+                        height="2"
+                        viewBox="0 0 5 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.44886 0.0880681V1.18182H-0.00568183V0.0880681H4.44886Z"
+                          fill="#2E3514"
+                        />
+                      </svg>
+                    </button>
+                    <p class="card-order__count">1</p>
+                    <button class="card-order__btn card-order__btn--minus">
+                      <svg
+                        width="7"
+                        height="8"
+                        viewBox="0 0 7 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.05682 7.30398V0.741477H4.17045V7.30398H3.05682ZM0.332386 4.57955V3.46591H6.89489V4.57955H0.332386Z"
+                          fill="#2E3514"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="card-order__price"><span>3000</span> ₽</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="cart__item">
+              <article class="card-order">
+                <img
+                  src="/img/order-img-1.jpg"
+                  alt=""
+                  class="card-order__img"
+                />
+                <div class="card-order__content">
+                  <h3 class="card-order__subtitle">
+                    Авторский букет из роз, диантусов и сухоцветов
+                  </h3>
+                  <div class="card-order__count-wrapper">
+                    <button class="card-order__btn card-order__btn--minus">
+                      <svg
+                        width="5"
+                        height="2"
+                        viewBox="0 0 5 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.44886 0.0880681V1.18182H-0.00568183V0.0880681H4.44886Z"
+                          fill="#2E3514"
+                        />
+                      </svg>
+                    </button>
+                    <p class="card-order__count">1</p>
+                    <button class="card-order__btn card-order__btn--minus">
+                      <svg
+                        width="7"
+                        height="8"
+                        viewBox="0 0 7 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.05682 7.30398V0.741477H4.17045V7.30398H3.05682ZM0.332386 4.57955V3.46591H6.89489V4.57955H0.332386Z"
+                          fill="#2E3514"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="card-order__price"><span>3000</span> ₽</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="cart__item">
+              <article class="card-order">
+                <img
+                  src="/img/order-img-1.jpg"
+                  alt=""
+                  class="card-order__img"
+                />
+                <div class="card-order__content">
+                  <h3 class="card-order__subtitle">
+                    Авторский букет из роз, диантусов и сухоцветов
+                  </h3>
+                  <div class="card-order__count-wrapper">
+                    <button class="card-order__btn card-order__btn--minus">
+                      <svg
+                        width="5"
+                        height="2"
+                        viewBox="0 0 5 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.44886 0.0880681V1.18182H-0.00568183V0.0880681H4.44886Z"
+                          fill="#2E3514"
+                        />
+                      </svg>
+                    </button>
+                    <p class="card-order__count">1</p>
+                    <button class="card-order__btn card-order__btn--minus">
+                      <svg
+                        width="7"
+                        height="8"
+                        viewBox="0 0 7 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.05682 7.30398V0.741477H4.17045V7.30398H3.05682ZM0.332386 4.57955V3.46591H6.89489V4.57955H0.332386Z"
+                          fill="#2E3514"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <p class="card-order__price"><span>3000</span> ₽</p>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class="cart__order-bottom">
+            <button class="cart__btn">Оформить</button>
+            <p class="cart__totap-price"><span>9000</span> ₽</p>
+          </div>
+
+          <button class="cart__close">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="5"
+                y="5.70715"
+                width="1"
+                height="25"
+                transform="rotate(-45 5 5.70715)"
+                fill="#D17D2F"
+              />
+              <rect
+                x="22.6777"
+                y="5"
+                width="1"
+                height="25"
+                transform="rotate(45 22.6777 5)"
+                fill="#D17D2F"
+              />
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- </div> -->
     </main>
     <footer class="footer">
       <div class="container footer__container">

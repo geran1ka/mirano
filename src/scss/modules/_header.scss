@@ -1,21 +1,56 @@
 @use "../variables" as *;
+@use "../mixin" as *;
+
 .header {
   padding: 32px 0;
+
+  @include mobile {
+    padding: 24px 0;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 32px;
+
+    @include tablet {
+      grid-template-areas: ". logo cart" "form form form";
+    }
+
+    @include mobile {
+      grid-template-areas: "logo logo cart" "form form form";
+      gap: 24px;
+    }
   }
 
   &__form {
     max-width: 420px;
     max-height: 40px;
+
+    @include laptop {
+      max-width: 302px;
+    }
+
+    @include tablet {
+      grid-area: form;
+      max-width: 100%;
+    }
   }
 
   &__logo {
     justify-self: center;
+    width: 200px;
+
+    @include tablet {
+      grid-area: logo;
+    }
+
+    @include mobile {
+      width: 140px;
+      justify-self: start;
+    }
   }
 
   &__cart-btn {
@@ -43,6 +78,10 @@
 
     &:focus-visible {
       outline-color: $light-orange;
+    }
+
+    @include tablet {
+      grid-area: cart;
     }
   }
 }

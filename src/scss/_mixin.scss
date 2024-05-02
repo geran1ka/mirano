@@ -1,13 +1,35 @@
-@mixin font-size($minFonts, $maxFonts, $minViewport, $maxViewport) {
+$laptop: 1024px;
+$tablet: 768px;
+$mobile: 520px;
+
+@mixin laptop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin font-size($min-size, $max-size, $min-screen, $max-screen) {
   font-size: clamp(
-    calc($minFonts * 1px),
+    #{$min-size}px,
     calc(
-      $minFonts * 1px +
+      #{$min-size}px +
         (
-          ($maxFonts - $minFonts) *
-            ((100vw - $minViewport * 1px) / ($maxViewport - $minViewport))
+          ($max-size - $min-size) *
+            ((100vw - #{$min-screen}px) / ($max-screen - $min-screen))
         )
     ),
-    calc($maxFonts * 1px)
+    #{$max-size}px
   );
 }
