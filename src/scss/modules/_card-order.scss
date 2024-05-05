@@ -28,10 +28,10 @@
 
   &__count-wrapper {
     display: flex;
-    gap: 12px;
     align-items: center;
     justify-items: center;
     max-width: max-content;
+    gap: 1px;
   }
 
   &__btn {
@@ -41,14 +41,52 @@
     border-radius: 6px;
     background-color: $bg;
     text-align: center;
+    outline-color: transparent;
 
+    transition:
+      outline-color $transition,
+      background-color $transition;
     & svg {
       margin: 0 auto;
+    }
+
+    &:focus-visible {
+      outline-color: $light-orange;
+      background-color: $bg;
+    }
+
+    &:hover {
+      background-color: $footer;
     }
   }
 
   &__count {
+    cursor: pointer;
     font-size: 14px;
+    padding: 5px;
+    border: none;
+    width: 29px;
+    text-align: center;
+    outline-color: transparent;
+    background-color: transparent;
+    transition:
+      outline-color $transition,
+      background-color $transition;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    // width: 100%;
+
+    &:focus-visible {
+      outline-color: $light-orange;
+      background-color: $bg;
+    }
+
+    &:hover {
+      background-color: $footer;
+    }
   }
 
   &__price {

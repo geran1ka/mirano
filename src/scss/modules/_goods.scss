@@ -3,13 +3,20 @@
 
 .goods {
   padding: 60px 0 70px;
-  // grid-area: goods;
 
   @include mobile {
     padding: 40px 50px;
   }
 
   &__container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__box {
+    flex-shrink: 1;
   }
 
   &__title {

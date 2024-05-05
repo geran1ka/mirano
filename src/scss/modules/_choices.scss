@@ -1,73 +1,15 @@
 @use "../variables" as *;
 @use "../mixin" as *;
 
-.filter {
-  &__group {
+.choices {
+  &__btn {
   }
 
-  &__group--choices {
-  }
+  &__box {
+    display: none;
 
-  &__choices {
-    position: relative;
-  }
-
-  &__select {
-  }
-
-  &__choices-box {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    max-width: max-content;
-    border-radius: 12px;
-    padding: 24px;
-    background-color: $white;
-
-    &--alt-padding {
-      @include mobile {
-        padding: 16px;
-      }
-    }
-  }
-
-  &__price {
-    border: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 12px;
-
-    @include mobile {
-      gap: 6px;
-    }
-  }
-
-  &__input-price {
-    border: none;
-    border-radius: 32px;
-    padding: 8px 16px;
-    max-width: 110px;
-    color: $dark;
-    background-color: $bg;
-  }
-
-  &__type-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  &__type-item {
-  }
-
-  &__type-btn {
-    color: $dark;
-
-    transition: color $transition;
-
-    &:hover {
-      color: $orange;
+    &--open {
+      display: block;
     }
   }
 }

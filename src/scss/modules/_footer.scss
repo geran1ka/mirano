@@ -43,8 +43,8 @@
   &__adress-email,
   &__developers-link {
     display: inline-block;
-    outline-offset: 4px;
-    outline-color: transparent;
+    outline: none;
+    border-bottom: 2px solid transparent;
     color: $dark;
 
     transition:
@@ -52,7 +52,7 @@
       outline-color $transition;
 
     &:focus-visible {
-      outline-color: $light-orange;
+      border-bottom-color: $light-orange;
     }
 
     &:hover {
