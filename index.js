@@ -73,3 +73,21 @@ for (let i = 0; i < btns.length; ++i) {
     adjustElementPosition(boxs[i]);
   });
 }
+
+const cartOpen = document.querySelector(".header__cart-btn");
+const cartClose = document.querySelector(".cart__close");
+const cart = document.querySelector(".cart");
+
+cartOpen.addEventListener("click", () => {
+  cart.classList.toggle("cart_open");
+});
+
+cartClose.addEventListener("click", () => {
+  cart.classList.remove("cart_open");
+});
+
+window.addEventListener("keydown", (e) => {
+  if (cart.closest(".cart_open") && e.key === "Escape") {
+    cart.classList.remove("cart_open");
+  }
+});

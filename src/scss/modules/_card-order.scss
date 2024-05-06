@@ -9,6 +9,7 @@
     max-width: 54px;
     max-height: 54px;
     border-radius: 12px;
+    object-fit: cover;
   }
 
   &__content {
@@ -75,7 +76,8 @@
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
     }
     // width: 100%;
 

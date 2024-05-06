@@ -158,7 +158,7 @@
     padding: 24px;
     background-color: $white;
 
-    &--alt-padding {
+    &--type {
       @include mobile {
         padding: 16px;
       }
@@ -184,6 +184,10 @@
     max-width: 110px;
     color: $dark;
     background-color: $bg;
+
+    @include mobile {
+      max-width: 90px;
+    }
   }
 
   &__type-list {
@@ -201,6 +205,10 @@
     transition: color $transition;
 
     &:hover {
+      color: $light-orange;
+    }
+
+    &_active {
       color: $orange;
     }
   }
