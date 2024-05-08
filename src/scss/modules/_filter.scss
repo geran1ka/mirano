@@ -2,7 +2,7 @@
 @use "../mixin" as *;
 
 .filter {
-  &__container {
+  &__form {
     display: flex;
     justify-content: space-between;
     align-items: center;

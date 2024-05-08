@@ -15,12 +15,13 @@
     gap: 20px;
 
     @media (max-width: 1366px) {
-      display: block;
+      // display: block;
     }
   }
 
   &__box {
-    flex-shrink: 1;
+    max-width: 970px;
+    flex-grow: 1;
   }
 
   &__title {
@@ -44,7 +45,6 @@
     grid-template-columns: repeat(auto-fit, 310px);
     gap: 24px 20px;
     justify-content: center;
-    max-width: 970px;
     margin: 0 auto;
 
     @include mobile {

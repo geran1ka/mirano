@@ -29,9 +29,26 @@ const adjustElementPosition = (elem, count = 0) => {
 export const initChoices = () => {
   const btns = document.querySelectorAll(".choices__btn");
   const boxs = document.querySelectorAll(".choices__box");
+  const closeAllChoicesBox = ({ target }) => {
+    let clickInside = target.closest(".choices");
+
+    if (!clickInside) {
+      for (let i = 0; i < btns.length; ++i) {
+        if (btns[i].classList.contains("filter__select--open")) {
+          btns[i].classList.remove("filter__select--open");
+        }
+
+        if (boxs[i].classList.contains("choices__box--open")) {
+          boxs[i].classList.remove("choices__box--open");
+        }
+      }
+      document.removeEventListener("click", closeAllChoicesBox);
+    }
+  };
 
   for (let i = 0; i < btns.length; ++i) {
     btns[i].addEventListener("click", (e) => {
+      console.log("e: ", e);
       for (let j = 0; j < boxs.length; ++j) {
         if (
           boxs[j].classList.contains("choices__box--open") &&
@@ -45,6 +62,11 @@ export const initChoices = () => {
       boxs[i].classList.toggle("choices__box--open");
       btns[i].classList.toggle("filter__select--open");
 
+      if (boxs[i].classList.contains("choices__box--open")) {
+        document.addEventListener("click", closeAllChoicesBox);
+      } else {
+        document.removeEventListener("click", closeAllChoicesBox);
+      }
       adjustElementPosition(boxs[i]);
     });
     window.addEventListener(
