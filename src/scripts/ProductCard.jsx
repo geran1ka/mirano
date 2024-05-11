@@ -13,9 +13,14 @@ export const ProductCard = ({ name, price, photoUrl }) => (
           <button
             class="card__btn-cart btn"
             aria-label="Добавить букет в корзину"
+            onMouseEnter={(e) => {
+              e.target.textContent = "В корзину";
+            }}
+            onMouseLeave={(e) => {
+              e.target.innerHTML = `${price}&nbsp;₽`;
+            }}
           >
-            <span class="card__price">{price}&nbsp;₽</span>
-            <span class="card__btn-text">В&nbsp;корзину</span>
+            {price}&nbsp;₽
           </button>
         </div>
       </div>

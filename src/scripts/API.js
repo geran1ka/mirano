@@ -1,4 +1,4 @@
-import { store } from "./Srore";
+import { store } from "./Store";
 
 /**
  * `/api/products?type=bouquets`

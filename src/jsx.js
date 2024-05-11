@@ -1,4 +1,20 @@
+export const Fragment = Symbol("Fragment");
+
 const jsx = (tag, attributes = {}, ...children) => {
+  if (tag === Fragment) {
+    const fragment = document.createDocumentFragment();
+
+    children.forEach((child) => {
+      if (typeof child === "string" || typeof child === "number") {
+        fragment.append(document.createTextNode(child.toString()));
+      } else {
+        fragment.append(child);
+      }
+    });
+
+    return fragment;
+  }
+
   if (typeof tag === "function") {
     return tag(attributes, ...children);
   }
@@ -9,7 +25,7 @@ const jsx = (tag, attributes = {}, ...children) => {
     if (key == "class") {
       element.classList.add(...value.split(" "));
     } else if (key.startsWith("on") && key.toLowerCase() in window) {
-      element.addEventListenet(key.toLowerCase().substring(2), value);
+      element.addEventListener(key.toLowerCase().substring(2), value);
     } else if (key === "style" && typeof value === "object") {
       Object.assign(element.style, value);
     } else {
@@ -20,6 +36,8 @@ const jsx = (tag, attributes = {}, ...children) => {
   children.forEach((child) => {
     if (typeof child === "string" || typeof child === "number") {
       element.append(document.createTextNode(child.toString()));
+    } else if (Array.isArray(child)) {
+      child.forEach((innerChild) => element.append(innerChild));
     } else {
       element.append(child);
     }

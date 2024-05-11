@@ -1,43 +1,51 @@
 import { fetchProducts } from "./API";
+import { filterForm, goodsSection, goodsTitle } from "./const";
 import { debounce } from "./debounce";
-
-const filterType = (type) => {
-  fetchProducts({ type: type.value });
-  const goodsTitle = document.querySelector(".goods__title");
-  goodsTitle.textContent = document
-    .querySelector(`[for="${type.value}"]`)
-    .textContent.toLocaleUpperCase();
-};
-
-const filterPrice = (type, price) => {
-  fetchProducts({ type: type.value, [price.name]: price.value });
-};
+import { callBackWithPreload } from "./preload";
 
 export const filterProducts = () => {
-  const filterForm = document.querySelector(".filter__form");
-  filterType(filterForm.type);
+  const applyFilters = () => {
+    const formData = new FormData(filterForm);
+    const type = formData.get("type");
+    const minPrice = formData.get("minPrice");
+    const maxPrice = formData.get("maxPrice");
+    const params = {};
 
-  const handleInput = (e) => {
-    const target = e.target;
+    if (type) params.type = type;
+    if (minPrice) params.minPrice = minPrice;
+    if (maxPrice) params.maxPrice = maxPrice;
 
-    if (target.name === "minPrice" && target.value !== "") {
-      filterPrice(filterForm.type, filterForm.minPrice);
-    } else if (target.name === "maxPrice" && target.value !== "") {
-      filterPrice(filterForm.type, filterForm.maxPrice);
-    } else {
-      filterType(filterForm.type);
-    }
+    callBackWithPreload(goodsSection, fetchProducts, params);
   };
 
-  const debounceHandleInput = debounce(handleInput, 300);
+  applyFilters();
 
-  filterForm.addEventListener("input", debounceHandleInput);
+  const applyPriceFilters = debounce(applyFilters, 500);
+
+  filterForm.addEventListener("input", (e) => {
+    const target = e.target;
+    if (target.name === "type") {
+      goodsTitle.textContent = target.labels[0].textContent;
+      filterForm.minPrice.value = "";
+      filterForm.maxPrice.value = "";
+
+      applyFilters();
+      return;
+    }
+
+    if (target.name === "minPrice" || target.name === "maxPrice") {
+      applyPriceFilters();
+    }
+  });
 
   filterForm.addEventListener("click", (e) => {
     const target = e.target;
 
     if (target.closest(".filter__type-btn")) {
-      fetchProducts({ type: "bouquets", category: target.textContent });
+      callBackWithPreload(goodsSection, fetchProducts, {
+        type: "bouquets",
+        category: target.textContent,
+      });
     }
   });
 };

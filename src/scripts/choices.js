@@ -1,3 +1,4 @@
+import { boxs, btns } from "./const";
 import { debounce } from "./debounce";
 
 const adjustElementPosition = (elem, count = 0) => {
@@ -12,7 +13,6 @@ const adjustElementPosition = (elem, count = 0) => {
     elem.style.left = "auto";
     elem.style.right = "0";
     elem.style.translate = "0 0";
-    console.log("выпал вправо");
   } else {
     elem.style.left = "50%";
     elem.style.right = "auto";
@@ -27,8 +27,8 @@ const adjustElementPosition = (elem, count = 0) => {
 };
 
 export const initChoices = () => {
-  const btns = document.querySelectorAll(".choices__btn");
-  const boxs = document.querySelectorAll(".choices__box");
+  // const btns = document.querySelectorAll(".choices__btn");
+  // const boxs = document.querySelectorAll(".choices__box");
   const closeAllChoicesBox = ({ target }) => {
     let clickInside = target.closest(".choices");
 
@@ -48,7 +48,6 @@ export const initChoices = () => {
 
   for (let i = 0; i < btns.length; ++i) {
     btns[i].addEventListener("click", (e) => {
-      console.log("e: ", e);
       for (let j = 0; j < boxs.length; ++j) {
         if (
           boxs[j].classList.contains("choices__box--open") &&

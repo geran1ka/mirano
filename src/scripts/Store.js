@@ -1,8 +1,6 @@
 class Store {
   constructor() {
     this.observers = [];
-    this.products = [];
-    this.categories = new Set();
   }
 
   // метод для добавления новых наблюдателей, функций которые вызываются при изменении состояния
@@ -13,6 +11,14 @@ class Store {
   // метод для уведомления всех наблюдателей об изменения в хранилище
   notifyObservers() {
     this.observers.forEach((observer) => observer());
+  }
+}
+
+class ProductStore extends Store {
+  constructor() {
+    super();
+    this.products = [];
+    this.categories = new Set();
   }
 
   getProducts() {
@@ -30,7 +36,9 @@ class Store {
   }
 
   updateCategories(products) {
-    this.categories.clear();
+    if (!products.filter((product) => product.categories).length) {
+      this.categories.clear();
+    }
 
     products.forEach((product) => {
       if (product.categories) {
@@ -43,4 +51,4 @@ class Store {
   }
 }
 
-export const store = new Store("Иван", 33);
+export const store = new ProductStore();

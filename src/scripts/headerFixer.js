@@ -1,8 +1,9 @@
+import { body, header } from "./const";
 import { debounce } from "./debounce";
 
 export const initHeaderFixer = () => {
-  const header = document.querySelector(".header");
-  const body = document.body;
+  // const header = document.querySelector(".header");
+  // const body = document.body;
   let headerHeight = header.offsetHeight;
 
   const updateHeaderHeight = () => {

@@ -56,4 +56,11 @@
   &__item {
     flex-basis: 310px;
   }
+
+  &__no-product {
+    text-align: center;
+    font-size: 24px;
+    color: $green;
+    grid-column: 1 / -1;
+  }
 }

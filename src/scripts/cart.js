@@ -1,8 +1,6 @@
-export const initCart = () => {
-  const cartOpen = document.querySelector(".header__cart-btn");
-  const cartClose = document.querySelector(".cart__close");
-  const cart = document.querySelector(".cart");
+import { cart, cartClose, cartOpen } from "./const";
 
+export const initCart = () => {
   const toggleCart = () => {
     cart.classList.toggle("cart_open");
 
