@@ -1,7 +1,7 @@
 import { CategoryItem } from "./CategoryItem";
 import { choicesBox, filterTypeList, typeChoices } from "./const";
 import { ListType } from "./ListType";
-import { store } from "./Store";
+import { productStore } from "./Store";
 
 export const initChoicesType = () => {
   // const typeChoices = document.querySelector(".filter__choices--type");
@@ -9,7 +9,7 @@ export const initChoicesType = () => {
   // const filterTypeList = typeChoices.querySelector(".filter__type-list");
 
   const updateTypeChoicesVisibility = () => {
-    const categories = store.getCategories();
+    const categories = productStore.getCategories();
 
     if (categories.size) {
       typeChoices.style.display = "";
@@ -27,7 +27,7 @@ export const initChoicesType = () => {
       filterTypeList.append(CategoryItem(category));
     });
 
-    store.subscribe(updateTypeChoicesVisibility);
+    productStore.subscribe(updateTypeChoicesVisibility);
   };
   updateTypeChoicesVisibility();
 };
@@ -37,7 +37,7 @@ export const initChoicesTypeAlt = () => {
   // const filterTypeList = typeChoices.querySelector(".filter__type-list");
 
   const updateTypeChoicesVisibility = () => {
-    const categories = store.getCategories();
+    const categories = productStore.getCategories();
 
     if (categories.size) {
       typeChoices.style.display = "";
@@ -50,7 +50,7 @@ export const initChoicesTypeAlt = () => {
       typeChoices.style.display = "none";
     }
 
-    store.subscribe(updateTypeChoicesVisibility);
+    productStore.subscribe(updateTypeChoicesVisibility);
   };
   updateTypeChoicesVisibility();
 };

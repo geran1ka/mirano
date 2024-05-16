@@ -19,3 +19,5 @@ export const goodsList = document.querySelector(".goods__list");
 
 export const cart = document.querySelector(".cart");
 export const cartClose = document.querySelector(".cart__close");
+export const cartList = document.querySelector(".cart__list");
+export const cartTotapPrice = document.querySelector(".cart__total-price");

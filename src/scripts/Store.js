@@ -1,3 +1,5 @@
+import { API_URL } from "./API";
+
 class Store {
   constructor() {
     this.observers = [];
@@ -51,4 +53,87 @@ class ProductStore extends Store {
   }
 }
 
-export const store = new ProductStore();
+class CartStore extends Store {
+  constructor() {
+    super();
+    this.cart = [];
+  }
+
+  async init() {
+    await this.registerCart();
+    await this.fetchCart();
+  }
+
+  async registerCart() {
+    try {
+      const response = await fetch(`${API_URL}/api/cart/register`, {
+        method: "POST",
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  getCart() {
+    return this.cart;
+  }
+
+  async fetchCart() {
+    try {
+      const response = await fetch(`${API_URL}/api/cart`, {
+        method: "GET",
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("data: ", data);
+      this.cart = data;
+      this.notifyObservers();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async postCart({ id, quantity }) {
+    try {
+      const response = await fetch(`${API_URL}/api/cart/items`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productId: id,
+          quantity,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("data: ", data);
+      this.cart = data;
+      this.notifyObservers();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async addProductCart(id) {
+    await this.postCart({ id, quantity: 1 });
+  }
+}
+
+export const productStore = new ProductStore();
+export const cartStore = new CartStore();

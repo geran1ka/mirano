@@ -1,4 +1,4 @@
-import { store } from "./Store";
+import { productStore } from "./Store";
 
 /**
  * `/api/products?type=bouquets`
@@ -33,7 +33,7 @@ export const fetchProducts = async (params = {}) => {
 
     const data = await response.json();
 
-    store.setProducts(data);
+    productStore.setProducts(data);
   } catch (error) {
     console.error(`Ошибка при получении данных: ${error}`);
     return [];

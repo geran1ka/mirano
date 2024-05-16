@@ -1,13 +1,13 @@
 import { fetchProducts } from "./API";
 import { goodsList } from "./const";
 import { ProductCard } from "./ProductCard";
-import { store } from "./Store";
+import { productStore } from "./Store";
 
 export const renderProducts = async () => {
   // const goodsList = document.querySelector(".goods__list");
 
   const updateList = () => {
-    const products = store.getProducts();
+    const products = productStore.getProducts();
     goodsList.innerHTML = "";
 
     if (!products.length) {
@@ -21,6 +21,6 @@ export const renderProducts = async () => {
     goodsList.append(...products.map((item) => ProductCard(item)));
   };
 
-  store.subscribe(updateList);
+  productStore.subscribe(updateList);
   updateList();
 };
