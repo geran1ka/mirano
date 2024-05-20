@@ -1,18 +1,17 @@
-import { cart, cartClose, cartOpen } from "./const";
+import { cartClose, cartElem, cartOpen } from "./const";
 import { renderCart } from "./renderCart";
 import { cartStore } from "./Store";
 
 const toggleCart = () => {
-  cart.classList.toggle("cart_open");
+  cartElem.classList.toggle("cart_open");
 
-  if (cart.closest(".cart_open") && window.innerWidth > 1360) {
-    cart.scrollIntoView({ behavior: "smooth" });
+  if (cartElem.closest(".cart_open") && window.innerWidth > 1360) {
+    cartElem.scrollIntoView({ behavior: "smooth" });
   }
 };
 
 const closeCart = () => {
-  console.log("closeCart");
-  cart.classList.remove("cart_open");
+  cartElem.classList.remove("cart_open");
 };
 
 export const initCart = async () => {

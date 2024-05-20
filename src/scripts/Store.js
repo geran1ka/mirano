@@ -95,7 +95,6 @@ class CartStore extends Store {
       }
 
       const data = await response.json();
-      console.log("data: ", data);
       this.cart = data;
       this.notifyObservers();
     } catch (error) {
@@ -122,7 +121,6 @@ class CartStore extends Store {
       }
 
       const data = await response.json();
-      console.log("data: ", data);
       this.cart = data;
       this.notifyObservers();
     } catch (error) {
@@ -132,6 +130,11 @@ class CartStore extends Store {
 
   async addProductCart(id) {
     await this.postCart({ id, quantity: 1 });
+  }
+
+  clearCart() {
+    this.cart = [];
+    this.notifyObservers();
   }
 }
 

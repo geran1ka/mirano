@@ -5,7 +5,6 @@ import { cartStore } from "./Store";
 export const renderCart = () => {
   const updateList = () => {
     const cart = cartStore.getCart();
-    console.log("cart: ", cart);
 
     cartList.textContent = "";
     if (!cart.length) {
@@ -24,7 +23,6 @@ export const renderCart = () => {
       (acc, product) => acc + product.price * product.quantity,
       0
     );
-    console.log("totalPriceValue: ", totalPriceValue);
 
     cartTotapPrice.innerHTML = `${totalPriceValue}&nbsp;₽`;
   };
