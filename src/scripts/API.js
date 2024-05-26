@@ -1,11 +1,5 @@
 import { productStore } from "./Store";
 
-/**
- * `/api/products?type=bouquets`
-    `/api/products?type=toys`
-    `/api/products?type=postcards`
- */
-
 const formatQueryString = (params) => {
   if (Object.keys(params).length === 0) {
     return "";
@@ -19,10 +13,10 @@ const formatQueryString = (params) => {
   return `?${searchParams.toString()}`;
 };
 
-// export const API_URL = "http://localhost:3000";
+export const API_URL = "http://localhost:3000";
 
 // export const API_URL = "https://pitch-massive-cadet.glitch.me";
-export const API_URL = "https://mirano-api-gqzr.onrender.com";
+// export const API_URL = "https://mirano-api-gqzr.onrender.com";
 
 export const fetchProducts = async (params = {}) => {
   try {

@@ -74,12 +74,22 @@
             <p class="hero__subtitle">и&nbsp;подарки</p>
           </div>
           <figure class="hero__group-image">
-            <img
-              class="hero__image hero__image--left"
-              src="/img/hero-left.jpg"
-              alt="Букет цветов в банке. В букете ярко-оранжевые розы, оранжевые тюльпаны и ливиный зев. Дополнительно в композицию включены белые цветы и зеленые элементы, придающие букету объем и разнообразие"
-              preserveAspectRatio="xMidYMid slice"
-            />
+            <picture class="hero__image hero__image--left">
+              <source
+                srcset="/img/hero-left@1x.avif 1x, /img/hero-left@2x.avif 2x"
+                type="image/avif"
+              />
+              <source
+                srcset="/img/hero-left@1x.webp 1x, /img/hero-left@2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="/img/hero-left@1x.jpg"
+                srcset="/img/hero-left@2x.jpg 2x"
+                alt="Букет цветов в банке. В букете ярко-оранжевые розы, оранжевые тюльпаны и ливиный зев. Дополнительно в композицию включены белые цветы и зеленые элементы, придающие букету объем и разнообразие"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </picture>
             <svg
               class="hero__image hero__image--center"
               role="img"
@@ -98,20 +108,36 @@
                 />
               </clippath>
 
-              <image
+              <foreignobject
+                class="hero__image-center"
+                clip-path="url(#hero)"
+                width="100%"
+                height="100%"
+              ></foreignobject>
+              <!-- <image
                 xlink:href="/img/hero.jpg"
                 width="100%"
                 height="100%"
                 clip-path="url(#hero)"
-              />
+              /> -->
             </svg>
 
-            <img
-              class="hero__image hero__image--right"
-              src="/img/hero-right.jpg"
-              alt="Букет цветов в белой вазе, состоящий из крупных ярко-розовых роз, белых цветов и зелени. Комбинация нежных красивых оттенков"
-              preserveAspectRatio="xMidYMid slice"
-            />
+            <picture class="hero__image hero__image--right">
+              <source
+                srcset="/img/hero-right@1x.avif 1x, /img/hero-right@2x.avif 2x"
+                type="image/avif"
+              />
+              <source
+                srcset="/img/hero-right@1x.webp 1x, /img/hero-right@2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="/img/hero-right@1x.jpg"
+                srcset="/img/hero-right@2x.jpg 2x"
+                alt="Букет цветов в белой вазе, состоящий из крупных ярко-розовых роз, белых цветов и зелени. Комбинация нежных красивых оттенков"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </picture>
           </figure>
         </div>
       </section>

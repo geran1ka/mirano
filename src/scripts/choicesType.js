@@ -21,36 +21,13 @@ export const initChoicesType = () => {
       typeChoices.style.display = "none";
     }
 
-    filterTypeList.innerHTML = "";
+    // filterTypeList.innerHTML = "";
 
-    categories.forEach((category) => {
-      filterTypeList.append(CategoryItem(category));
-    });
-
-    productStore.subscribe(updateTypeChoicesVisibility);
+    // categories.forEach((category) => {
+    //   filterTypeList.append(CategoryItem(category));
+    // });
   };
-  updateTypeChoicesVisibility();
-};
+  productStore.subscribe(updateTypeChoicesVisibility);
 
-export const initChoicesTypeAlt = () => {
-  // const typeChoices = document.querySelector(".filter__choices--type");
-  // const filterTypeList = typeChoices.querySelector(".filter__type-list");
-
-  const updateTypeChoicesVisibility = () => {
-    const categories = productStore.getCategories();
-
-    if (categories.size) {
-      typeChoices.style.display = "";
-      filterTypeList.innerHTML = "";
-
-      categories.forEach((category) => {
-        filterTypeList.append(CategoryItem(category));
-      });
-    } else {
-      typeChoices.style.display = "none";
-    }
-
-    productStore.subscribe(updateTypeChoicesVisibility);
-  };
   updateTypeChoicesVisibility();
 };

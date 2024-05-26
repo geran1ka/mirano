@@ -1,5 +1,6 @@
 import { boxs, btns } from "./const";
 import { debounce } from "./debounce";
+import { productStore } from "./Store";
 
 const adjustElementPosition = (elem, count = 0) => {
   const rect = elem.getBoundingClientRect();
@@ -74,5 +75,9 @@ export const initChoices = () => {
         adjustElementPosition(boxs[i]);
       })
     );
+    // productStore.subscribe(adjustElementPosition.bind(null, boxs[i]));
+    productStore.subscribe(() => {
+      adjustElementPosition(boxs[i]);
+    });
   }
 };
